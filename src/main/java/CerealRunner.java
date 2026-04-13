@@ -44,7 +44,7 @@ public class CerealRunner
       //Add your solution to Question 2 here.
          double max = cereals.get(0);
          for (int i = 0; i < cereals.size(); i++) {
-            if ((cereals.get(i).getFiber() / cereals.get(i).getCalories()) > cereals.get(0)) {
+            if ((double) (cereals.get(i).getFiber() / cereals.get(i).getCalories()) > cereals.get(0)) {
                max = cereals.get(i);
             }
          }
@@ -61,7 +61,7 @@ public class CerealRunner
    public static double findNetCarbsPerCup(Cereal c)
    {
       //Add your solution to Question 3 here.
-      return (c.getCarbs() * c.getCups()) - (c.getFiber() / c.getCalories());
+      return (double c.getCarbs() * double c.getCups()) - (double c.getFiber() / double c.getCalories());
    }
   
 
