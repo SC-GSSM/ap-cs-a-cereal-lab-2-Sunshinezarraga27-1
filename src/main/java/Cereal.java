@@ -46,7 +46,7 @@ public class Cereal
 
    /* Accessor method returns the value stored in the instance variable calories.  
     */
-   public int getCalories()
+   public double getCalories()
    {
       return calories;
    }
