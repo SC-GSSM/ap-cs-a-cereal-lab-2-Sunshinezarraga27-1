@@ -42,10 +42,11 @@ public class CerealRunner
    public static Cereal highestPercentFiber()
    {
       //Add your solution to Question 2 here.
-         Double max = cereals.get(0).getFiber();
+         Cereal max = cereals.get(0).getFiber();
          for (int i = 0; i < cereals.size(); i++) {
-            if ((cereals.get(i).getFiber() > cereals.get(0).getFiber())) {
-               max = cereals.get(i);
+            double p = c.getFiber() / c.getCalories();
+            if (per > max.getFiber() / max.getCalories()) {
+               max = c;
             }
          }
          return max;
@@ -61,7 +62,10 @@ public class CerealRunner
    public static double findNetCarbsPerCup(Cereal c)
    {
       //Add your solution to Question 3 here.
-      return (c.getCarbs()- c.getFiber()) + 4;
+      double scale = 1 / c.getCups();
+      double fullCarbs = c.getCarbs() * scale;
+      double fullFiber = c.getFiber() * scale;
+      return fullCarbs - fullFiber;
    }
   
 
@@ -133,7 +137,6 @@ public class CerealRunner
       System.out.println("Expected results: 11.0");
       System.out.println("Actual results:   " + findNetCarbsPerCup(testCereal));
 
-      //question 4
       for(Cereal c: cereals) { 
    if(c.getName().equals("All-Bran with Extra Fiber") ||   
       c.getName().equals("Apple Jacks") ||  
@@ -143,6 +146,12 @@ public class CerealRunner
                            + findNetCarbs(c)); 
    } 
 }
+/* Question 4 Answer
+findNetCarbs is invalid because the method name is different. 
+I'm gonna say NetCarbs seems out of place because it doesn't use a getter to retrieve the value.
+I think this data set is focusing on finding the total amount of Carbs in each cereal.
+*/
+
       
    }
 }
