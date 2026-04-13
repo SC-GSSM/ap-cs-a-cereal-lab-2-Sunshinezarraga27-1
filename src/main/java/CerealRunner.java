@@ -42,11 +42,11 @@ public class CerealRunner
    public static Cereal highestPercentFiber()
    {
       //Add your solution to Question 2 here.
-         Cereal max = cereals.get(0).getFiber();
+         Cereal max = cereals.get(0);
          for (int i = 0; i < cereals.size(); i++) {
-            double p = c.getFiber() / c.getCalories();
-            if (per > max.getFiber() / max.getCalories()) {
-               max = c;
+            double p = cereals.getFiber() / cereals.getCalories();
+            if (p > max.getFiber() / max.getCalories()) {
+               max = cereals.get(i);
             }
          }
          return max;
