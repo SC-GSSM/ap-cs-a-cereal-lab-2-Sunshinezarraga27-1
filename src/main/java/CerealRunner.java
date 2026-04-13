@@ -43,10 +43,10 @@ public class CerealRunner
    {
       //Add your solution to Question 2 here.
          Cereal max = cereals.get(0);
-         for (int i = 0; i < cereals.size(); i++) {
-            double p = cereals.getFiber() / cereals.getCalories();
+         for (Cereal c : cereals) {
+            double p = c.getFiber() / c.getCalories();
             if (p > max.getFiber() / max.getCalories()) {
-               max = cereals.get(i);
+               max = c;
             }
          }
          return max;
@@ -137,7 +137,7 @@ public class CerealRunner
       System.out.println("Expected results: 11.0");
       System.out.println("Actual results:   " + findNetCarbsPerCup(testCereal));
 
-      for(Cereal c: cereals) { 
+for(Cereal c: cereals) { 
    if(c.getName().equals("All-Bran with Extra Fiber") ||   
       c.getName().equals("Apple Jacks") ||  
       c.getName().equals("Cocoa Puffs")) 
