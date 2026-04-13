@@ -42,9 +42,9 @@ public class CerealRunner
    public static Cereal highestPercentFiber()
    {
       //Add your solution to Question 2 here.
-         double max = cereals.get(0);
+         Double max = cereals.get(0).getFiber();
          for (int i = 0; i < cereals.size(); i++) {
-            if ((double) (cereals.get(i).getFiber() / cereals.get(i).getCalories()) > cereals.get(0)) {
+            if ((cereals.get(i).getFiber() > cereals.get(0).getFiber())) {
                max = cereals.get(i);
             }
          }
@@ -132,6 +132,17 @@ public class CerealRunner
       Cereal testCereal = new Cereal("Golden Crisp",100,0,11,0.88);
       System.out.println("Expected results: 11.0");
       System.out.println("Actual results:   " + findNetCarbsPerCup(testCereal));
+
+      //question 4
+      for(Cereal c: cereals) { 
+   if(c.getName().equals("All-Bran with Extra Fiber") ||   
+      c.getName().equals("Apple Jacks") ||  
+      c.getName().equals("Cocoa Puffs")) 
+   { 
+       System.out.println("\nCereal: " + c.getName() + ", NetCarbs: "    
+                           + findNetCarbs(c)); 
+   } 
+}
       
    }
 }
