@@ -61,7 +61,7 @@ public class CerealRunner
    public static double findNetCarbsPerCup(Cereal c)
    {
       //Add your solution to Question 3 here.
-      return (double c.getCarbs() * double c.getCups()) - (double c.getFiber() / double c.getCalories());
+      return c.getCarbs() - c.getFiber();
    }
   
 
